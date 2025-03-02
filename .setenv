@@ -1,7 +1,3 @@
-# environment_setup.sh
-#!/bin/bash
-# Export a variable
-
 export SECRET_KEY=fdkjshfhjsdfdskfdsfdcbsjdkfdsdf
 export DEBUG=True
 export APP_SETTINGS=config.DevelopmentConfig
