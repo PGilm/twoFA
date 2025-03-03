@@ -21,6 +21,19 @@
               {% endfor %}
             {% endif %}
         </div>
+
+        <div class="form-floating">
+          {{ form.emailaddresss(placeholder="email addresss", class="form-control mb-2") }}
+          {{ form.emailaddresss.label }}
+            {% if form.emailaddresss.errors %}
+              {% for error in form.emailaddresss.errors %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
+              {% endfor %}
+            {% endif %}
+        </div>
+
         <div class="form-floating">
           {{ form.password(placeholder="password", class="form-control mb-2") }}
           {{ form.password.label }}
