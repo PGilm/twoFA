@@ -23,10 +23,10 @@
         </div>
 
         <div class="form-floating">
-          {{ form.emailaddresss(placeholder="email addresss", class="form-control mb-2") }}
-          {{ form.emailaddresss.label }}
-            {% if form.emailaddresss.errors %}
-              {% for error in form.emailaddresss.errors %}
+          {{ form.emailaddress(placeholder="emailaddress", class="form-control mb-2") }}
+          {{ form.emailaddress.label }}
+            {% if form.emailaddress.errors %}
+              {% for error in form.emailaddress.errors %}
                 <div class="alert alert-danger" role="alert">
                   {{ error }}
                 </div>

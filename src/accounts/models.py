@@ -3,7 +3,7 @@ from datetime import datetime
 import pyotp
 from flask_login import UserMixin
 
-from src import bcrypt, db  # bcrypt,
+from src import bcrypt, db
 from config import Config
 
 
@@ -13,9 +13,7 @@ class User(UserMixin, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True, nullable=False)
-    
-    emailaddress = db.Column(db.String, unique=True, nullable=False)
-    
+    emailaddress = db.Column(db.String, nullable=False) # email
     password = db.Column(db.String, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False)
     is_two_factor_authentication_enabled = db.Column(
@@ -24,7 +22,7 @@ class User(UserMixin, db.Model):
 
     def __init__(self, username, emailaddress, password):
         self.username = username
-        self.emailaddress = emailaddress
+        self.emailaddress = emailaddress # email
         self.password = bcrypt.generate_password_hash(password)
         self.created_at = datetime.now()
         self.secret_token = pyotp.random_base32()
@@ -38,4 +36,4 @@ class User(UserMixin, db.Model):
         return totp.verify(user_otp)
 
     def __repr__(self):
-        return f"<user {self.username} email {self.emailaddress}>"
+        return f"<user {self.username} email {self.emailaddress}>" # email
